@@ -1,0 +1,11 @@
+name: Awesome Linter
+on: [push, pull_request]
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1.0.0
+      - run: |
+          chmod +x hello.sh
+          ./hello.sh
