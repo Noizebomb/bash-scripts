@@ -1,0 +1,28 @@
+---
+on:
+  push:
+    branches:
+    - '*'         # matches every branch that doesn't contain a '/'
+    - '*/*'       # matches every branch containing a single '/'
+    - '**'        # matches every branch
+    - '!master'   # excludes master
+  pull_request:
+    branches:
+    - '*'         # matches every branch that doesn't contain a '/'
+    - '*/*'       # matches every branch containing a single '/'
+    - '**'        # matches every branch
+    - '!master'   # excludes master
+
+-jobs:
+  -build:
+    -runs on: ubuntu-latest    
+    -steps:
+      -name: checkout repository
+      -action: actions/checkout@deployment
+      -name: update the server
+      -run: sudo apt update
+      -job:  
+        -name: install 
+        -command: sudo apt install 
+
+  
