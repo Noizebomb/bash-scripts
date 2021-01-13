@@ -1,8 +1,0 @@
-
-{
-
-    "greetings": "welcome back",
-    "user": "$(whoami)",
-    "day": "$(date +%A)" 
-
-} 
